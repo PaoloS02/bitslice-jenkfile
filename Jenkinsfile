@@ -22,5 +22,7 @@ node ('atlasnode') {
       sh script: '''THREADS=`cat /proc/cpuinfo | grep -c processor`
       mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Debug -DLLVM_ENABLE_ASSERTIONS=ON -DBUILD_SHARED_LIBS=ON  ../llvm && make -j $THREADS'''
       
-    }
+    	}
+ 	}
+ 
  }
