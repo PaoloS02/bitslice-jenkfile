@@ -11,7 +11,7 @@ node ('atlasnode') {
       git url: 'https://github.com/PaoloS02/llvm-bitslicer.git', branch: 'master'
     }
     
-    dir('clang') {
+    dir('llvm/tools/clang') {
       git url: 'https://github.com/PaoloS02/clang-bitslicer.git', branch: 'master'
     }
   
