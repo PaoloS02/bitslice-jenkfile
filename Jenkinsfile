@@ -24,5 +24,12 @@ node ('atlasnode') {
       
     	}
  	}
+ 	
+ 	stage('LLVM Regression') {
+    docker.image('embecosm/builder:ubuntu-16.04').inside {
+      sh script: '''cd build && make check > "${WORKSPACE}/llvm-tests.log" || true'''
+      archiveArtifacts allowEmptyArchive: true, artifacts: 'llvm-tests.log'
+    }
+  }
  
  }
